@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>『ブレイクマイケース』2nd Anniversary Store</title>
 <style>
   :root {
@@ -25,6 +26,7 @@
     background-attachment: fixed;
     position: relative;
     z-index: 0;
+      font-size: 16px;
   }
   main {
     padding: 16px;
@@ -66,7 +68,7 @@
   border-radius: 999px;
   background: #f0f8ff;
   border: 1px solid #c0d8ff;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .badge-strong {
@@ -80,7 +82,7 @@
   border-radius: 999px;
   border: 1px solid #999;
   background: #fff;
-  font-size: 12px;
+  font-size: 18px;
 }
 
   .section-block {
@@ -117,7 +119,7 @@
 
 .item-left {
   flex: 1;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -257,6 +259,27 @@
   text-align: center;
 }
 
+@media (max-width: 600px) {
+  :root {
+    --header-height: 180px;
+      }
+      
+  body {
+    font-size: 16px;
+  }
+
+  .item-left {
+    font-size: 16px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .qty-box input {
+    font-size: 16px;
+  }
+}
 
 </style>
 </head>
@@ -306,13 +329,13 @@
   <section class="section-block">
     <h2>前半（5月23日〜）</h2>
 
-    <h3>ブラインド</h3>
+    <h3>■ ブラインド</h3>
     <div id="front-blind"></div>
 
-    <h3>キャラ別（21種固定）</h3>
+    <h3>■ オープン（キャラ別）</h3>
     <div id="front-characters"></div>
 
-    <h3>オープン商品</h3>
+    <h3>■ オープン商品（その他）</h3>
     <div id="front-open"></div>
   </section>
 
@@ -320,16 +343,16 @@
   <section class="section-block">
     <h2>後半（5月31日〜）</h2>
 
-    <h3>ブラインド</h3>
+    <h3>■ ブラインド</h3>
     <div id="back-blind"></div>
 
-    <h3>キャラ別（22種：レアは証明写真のみ）</h3>
+    <h3>■ オープン（キャラ別）</h3>
     <div id="back-characters"></div>
 
-    <h3>オープン商品（6種）</h3>
+    <h3>■ オープン（所属別）</h3>
     <div id="back-open-6"></div>
 
-    <h3>オープン商品</h3>
+    <h3>■ オープン（その他）</h3>
     <div id="back-open"></div>
   </section>
 
@@ -380,45 +403,45 @@ const extraChar = "レア";
 
 // 前半ブラインド 8
 const frontBlindItems = [
-  ["缶バッジ 2nd Anniversary 本部・交際部・管理部", 550],
-  ["缶バッジ 2nd Anniversary 強行部・交渉部・特務部", 550],
-  ["イラストカード 2nd Anniversary", 330],
-  ["チェンジングカード 2nd Anniversary", 550],
-  ["アクリルスタンド 2nd Anniversary mini", 880],
+  ["缶バッジ2nd Anniv. 本部・交際部・管理部", 550],
+  ["缶バッジ2nd Anniv. 強行部・交渉部・特務部", 550],
+  ["イラストカード2nd Anniv.", 330],
+  ["チェンジングカード2nd Anniv.", 550],
+  ["アクリルスタンド2nd Anniv. mini", 880],
   ["アクリルスタンド レア", 660],
-  ["オーロラアクリルキューブ 2nd Anniversary", 880],
-  ["A5クリアファイル 2nd Anniversary", 440]
+  ["オーロラアクリルキューブ2nd Anniv.", 880],
+  ["A5クリアファイル2nd Anniv.", 440]
 ];
 
 // 前半キャラ別（21種固定）9
 const frontCharItems = [
-  ["ミラーアクリルパネル 2nd Anniversary", 3850],
-  ["アクリルしおりセット 2nd Anniversary", 1430],
+  ["ミラーアクリルパネル2nd Anniv.", 3850],
+  ["アクリルしおりセット2nd Anniv.", 1430],
   ["等身アクスタ", 1320],
-  ["スティックバルーン 2nd Anniversary mini", 1210],
-  ["デカンバッチ 2nd Anniversary", 1100],
-  ["硬質カードケース 2nd Anniversary", 770],
-  ["キーホルダー 2nd Anniversary", 1320],
-  ["缶バッジケース&缶バッジセット 2nd Anniversary mini", 1650],
-  ["Tea set can 2nd Anniversary", 2484]
+  ["スティックバルーン2nd Anniv. mini", 1210],
+  ["デカンバッチ2nd Anniv.", 1100],
+  ["硬質カードケース2nd Anniv.", 770],
+  ["キーホルダー2nd Anniv.", 1320],
+  ["缶バッジケース&缶バッジセット2nd Anniv. mini", 1650],
+  ["Tea set can2nd Anniv.", 2484]
 ];
 
 // 前半オープンその他 4
 const frontOpenItems = [
   ["ボイスラバーストラップ レア", 2750],
-  ["チョコインサブレ 2nd Anniversary（3種類）", 1188],
-  ["ネイルケアセット 2nd Anniversary", 2200],
-  ["メッシュポーチ 2nd Anniversary", 1980]
+  ["チョコインサブレ2nd Anniv.（3種類）", 1188],
+  ["ネイルケアセット2nd Anniv.", 2200],
+  ["メッシュポーチ2nd Anniv.", 1980]
 ];
 
 // 後半ブラインド 6
 const backBlindItems = [
-  ["クリア色紙 2nd Anniversary", 660],
+  ["クリア色紙2nd Anniv.", 660],
   ["缶バッジ「PERSONAL SONG 第二弾」", 440],
   ["「PERSONAL SONG 第二弾」SQUARE REAL PHOTO", 770],
   ["クリアカード「PERSONAL SONG 第二弾」", 275],
   ["トレーディングダイカットステッカー レア", 440],
-  ["オーロラカード 2nd Anniversary", 550]
+  ["オーロラカード2nd Anniv.", 550]
 ];
 
 // 後半キャラ別（共通4商品）
@@ -432,25 +455,34 @@ const backCharCommonItems = [
 // 証明写真（21種＋レア）
 const backCharPhotoItem = ["証明写真風ステッカー", 660];
 
-// 後半オープン6種（本部〜特務部共通2商品として扱う）
-const backOpen6Items = [
-  ["チェスクッキー「PERSONAL SONG 第二弾」", 1320],
-  ["ミニタオル", 990]
+// とりあえず、ここに挿入開始
+
+const groups = ["本部","交際部","管理部","強行部","交渉部","特務部"];
+
+const backGroupItems = [
+  ["チェスクッキー", 1320],
+  ["ミニタオル", 990],
+  ["ダイカットステッカーセット2nd Anniv. mini", (group) => {
+    return ["本部","管理部","交渉部"].includes(group) ? 990 : 1320;
+  }]
 ];
+
+// とりあえず、挿入終わり
+
+
 
 // 後半オープンその他
 const backOpenItems = [
-  ["クリアポスターセット 2nd Anniversary（全3種）", 3850],
-  ["ダイカットステッカーセット 2nd Anniversary mini 本部", 990],
-  ["ダイカットステッカーセット 2nd Anniversary mini 交際部", 1320],
-  ["ダイカットステッカーセット 2nd Anniversary mini 管理部", 990],
-  ["ダイカットステッカーセット 2nd Anniversary mini 強行部", 1320],
-  ["ダイカットステッカーセット 2nd Anniversary mini 交渉部", 990],
-  ["ダイカットステッカーセット 2nd Anniversary mini 特務部", 1320],
+  ["クリアポスターセット2nd Anniv.（A）", 3850],
+  ["クリアポスターセット2nd Anniv.（B）", 3850],
+    ["クリアポスターセット2nd Anniv.（C）", 3850],
   ["Premiumカードセット「PERSONAL SONG 第二弾」", 4950],
-  ["ダイカットステッカー（全4種）", 440],
+  ["ダイカットステッカー（弥代衣都）", 440],
+    ["ダイカットステッカー（弥代透吾）", 440],
+      ["ダイカットステッカー（伊達幸邑）", 440],
+        ["ダイカットステッカー（天羽嵐）", 440],
   ["シェアカードセット", 1650],
-  ["会場限定缶バッジ 2nd Anniversary", 440],
+  ["会場限定缶バッジ2nd Anniv.", 440],
   ["会場限定アクキー", 660]
 ];
 
@@ -629,6 +661,51 @@ function createBackCharSection(containerId, area) {
 }
 
 
+function createBackGroupSection(containerId, area) {
+  const container = document.getElementById(containerId);
+
+  groups.forEach(groupName => {
+    const acc = document.createElement("div");
+    acc.className = "accordion";
+    acc.textContent = groupName;
+
+    const panel = document.createElement("div");
+    panel.className = "panel";
+
+    backGroupItems.forEach(([name, price]) => {
+      let finalPrice = typeof price === "function"
+        ? price(groupName)
+        : price;
+
+      const div = document.createElement("div");
+      div.className = "item";
+
+      div.innerHTML = `
+        <div class="item-left">${name}</div>
+        <div class="item-right">
+          <span class="price">¥${finalPrice.toLocaleString()}</span>
+          <div class="qty-box">
+            <button class="qty-btn minus">−</button>
+            <input type="number" value="0" min="0"
+              data-price="${finalPrice}" data-area="${area}">
+            <button class="qty-btn plus">＋</button>
+          </div>
+        </div>
+      `;
+
+      panel.appendChild(div);
+    });
+
+    acc.addEventListener("click", () => {
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    });
+
+    container.appendChild(acc);
+    container.appendChild(panel);
+  });
+}
+
+
 // 描画実行
 createSimpleList("front-blind", frontBlindItems, "front");
 createFrontCharSection("front-characters", frontCharItems, "front");
@@ -636,7 +713,7 @@ createSimpleList("front-open", frontOpenItems, "front");
 
 createSimpleList("back-blind", backBlindItems, "back");
 createBackCharSection("back-characters", "back");
-createSimpleList("back-open-6", backOpen6Items, "back");
+createBackGroupSection("back-open-6", "back");
 createSimpleList("back-open", backOpenItems, "back");
 
 // 計算
