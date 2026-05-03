@@ -303,7 +303,9 @@
     <div class="header-row row2">
       <div class="badge" id="sum-front">前半：0円</div>
       <div class="badge" id="sum-back">後半：0円</div>
-      <div class="badge" id="bonus-epos">ESPOS特典</div>
+      <div class="badge" id="bonus-epos">
+  ※EPOS特典は別条件
+</div>
     </div>
 
     <!-- 3段目：特典＋ボタン -->
@@ -738,14 +740,10 @@ function calcTotals() {
 
   const bonus3000 = Math.floor(total / 3000);
   const bonus7000 = total >= 7000 ? 1 : 0;
-  const bonusepos = Math.floor(total / 3000);
 
   document.getElementById("bonus-3000").textContent = `3000円毎特典：${bonus3000}枚`;
 	const bonus7000Clear = total >= 7000 ? "クリア！" : "未達成";
 	document.getElementById("bonus-7000").textContent = `7000円以上特典：${bonus7000Clear}`;
- document.getElementById("bonus-epos").textContent = `3000円毎EPOS特典：${bonusepos}枚`;
-
-
 
 }
 
